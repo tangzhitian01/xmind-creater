@@ -1,0 +1,14 @@
+# Third-party reference archives are not part of this skill.
+demo-material-generation-*.zip
+processon-mindmap-generator-*.zip
+summarize-pro-*.zip
+
+# Local source-derived mind maps and provenance.
+outputs/
+
+# Python caches and temporary files.
+__pycache__/
+*.py[cod]
+!mindmap-skill/runtime/win-x64/*.pyd
+*.tmp
+.mindmap-*.xmind
