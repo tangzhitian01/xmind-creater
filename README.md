@@ -1,4 +1,4 @@
-# Markdown XMind Offline
+# xmind-creater
 
 An offline Markdown-to-XMind agent skill for Codex and Claude Code. The Windows x64 package includes a minimal Python runtime and does not require Node.js, npm, or the original video2txt project.
 
@@ -25,3 +25,5 @@ To use without an agent, create a UTF-8 Markdown outline and run:
 See [the skill guide](mindmap-skill/README.md) for more options. The converter does not summarize raw prose or include an AI model. Its ZIP validation does not replace opening the result in XMind for visual inspection.
 
 The three vendor ZIPs and source-derived example outputs in this working directory are excluded from Git. The portable Python distribution's license is included in `mindmap-skill/runtime/win-x64/LICENSE.txt`.
+
+The repository is distributed under the root [Apache 2.0 license](LICENSE). The bundled Python runtime retains its own license notice.
