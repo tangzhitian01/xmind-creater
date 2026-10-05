@@ -1,20 +1,31 @@
 # xmind-creater
 
-An offline Markdown-to-XMind agent skill for Codex and Claude Code. The Windows x64 package includes a minimal Python runtime and does not require Node.js, npm, or the original video2txt project.
+面向 Codex 和 Claude Code 的离线 Markdown 转 XMind 思维导图技能。Windows x64 安装包内置精简版 Python 运行时，不需要安装 Node.js、npm，也不依赖原始的 video2txt 项目。
 
-## Install
+## 安装
 
-Download and extract `markdown-xmind-offline-win-x64.zip`, then run inside the extracted `mindmap-skill` folder:
+下载并解压 `markdown-xmind-offline-win-x64.zip`，然后在解压后的 `mindmap-skill` 目录中运行：
 
 ```powershell
 .\install.cmd --agent both
 ```
 
-Use `--agent codex` or `--agent claude` to install for just one agent. In Codex, invoke `$markdown-xmind-offline`; in Claude Code, invoke `/markdown-xmind-offline`.
+如果只需要安装到一个智能体，可使用 `--agent codex` 或 `--agent claude`：
 
-On macOS, Linux, and Windows ARM64, copy `mindmap-skill` and run `python3 install.py --agent both` with Python 3.8+ installed. Only Windows x64 has a bundled runtime.
+- Codex：调用 `$markdown-xmind-offline`
+- Claude Code：调用 `/markdown-xmind-offline`
 
-To use without an agent, create a UTF-8 Markdown outline and run:
+在 macOS、Linux 和 Windows ARM64 上，请复制 `mindmap-skill` 目录，并在已安装 Python 3.8 或更高版本的环境中运行：
+
+```bash
+python3 install.py --agent both
+```
+
+只有 Windows x64 安装包提供内置 Python 运行时。
+
+## 不使用智能体直接转换
+
+先创建一个 UTF-8 编码的 Markdown 大纲，然后运行：
 
 ```powershell
 .\mindmap.cmd audit outline.md
@@ -22,8 +33,13 @@ To use without an agent, create a UTF-8 Markdown outline and run:
 .\mindmap.cmd validate output.xmind
 ```
 
-See [the skill guide](mindmap-skill/README.md) for more options. The converter does not summarize raw prose or include an AI model. Its ZIP validation does not replace opening the result in XMind for visual inspection.
+更多选项请参阅[技能使用说明](mindmap-skill/README.md)。
 
-The three vendor ZIPs and source-derived example outputs in this working directory are excluded from Git. The portable Python distribution's license is included in `mindmap-skill/runtime/win-x64/LICENSE.txt`.
+## 说明
 
-The repository is distributed under the root [Apache 2.0 license](LICENSE). The bundled Python runtime retains its own license notice.
+- 转换器不会对原始长文本进行摘要，也不包含 AI 模型。
+- ZIP 格式校验不能替代在 XMind 中打开文件进行视觉检查。
+- 工作目录中的三个供应商 ZIP 包和基于源文件生成的示例输出已通过 Git 忽略，不会提交到仓库。
+- 便携版 Python 运行时的许可证位于 `mindmap-skill/runtime/win-x64/LICENSE.txt`。
+
+本仓库遵循根目录中的 [Apache 2.0 许可证](LICENSE) 发布；内置 Python 运行时同时保留其自身的许可证声明。
